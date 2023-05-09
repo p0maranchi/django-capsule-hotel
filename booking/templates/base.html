@@ -24,7 +24,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end">
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0 fs-5 ">
                         <li class="nav-item">
                             <a class="nav-link active Hover" aria-current="page" href="{% url 'index' %}">Головна</a>
@@ -84,7 +84,7 @@
     {% block body %}
     {% endblock %}
     <footer class="bg-dark text-white">
-        <div class="container-fluid pt-3">
+        <div class="container-fluid pt-3 sticky-bottom">
             
                 <div class="container text-center text-md-start mt-5">
                   <!-- Grid row -->
@@ -95,7 +95,7 @@
                         
                         <!-- Links -->
                             <h5 class="text-uppercase fw-bold mb-4 textGradient" id="contact">
-                                Contact Us
+                                Зв'яжіться з нами
                             </h5>
                             <p>
                                 <a

@@ -65,7 +65,7 @@ def bookingSubmit(request):
         'dayOut': dayOut,
         'price': price,
         'people': people,
-        
+        'names': names,
     })
 
 def userPanel(request):
@@ -125,7 +125,7 @@ def userUpdateSubmit(request, id):
     price = 250 * int(people)
     
     if request.method == 'POST':
-        booking = Booking.objects.get_or_create(
+        booking = Booking.objects.update(
             user = user,
             capsule = capsule,
             dayIn = dayIn,

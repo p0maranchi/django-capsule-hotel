@@ -1,5 +1,5 @@
 <title>Логін</title>
-{% extends 'layout.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block body %}
 
@@ -17,11 +17,11 @@
 
         <div class="mb-3">
           <label class="form-label fs-2">Логін</label>
-          <input type="text" width="" class="form-control form-control-lg" name="username" aria-describedby="emailHelp" placeholder="Username...">
+          <input type="text" class="form-control form-control-lg" name="username" placeholder="Логін...">
         </div>
         <div class="mb-3">
           <label class="form-label fs-2">Пароль</label>
-          <input type="password" class="form-control form-control-lg" placeholder="Password..." name="password">
+          <input type="password" class="form-control form-control-lg" placeholder="Пароль..." name="password">
         </div>
 
         <button type="submit" class="btn btn-primary">Увійти</button></br>

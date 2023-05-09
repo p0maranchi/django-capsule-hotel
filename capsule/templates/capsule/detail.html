@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% for c in capsule %}
+<title>{{c.name}}</title>
+{% endfor %}
+
+
+
 {% block body %}
 
 <div class="container mt-3">  

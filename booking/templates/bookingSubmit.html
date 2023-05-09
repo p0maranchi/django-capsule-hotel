@@ -20,7 +20,7 @@
                     <div class="fs-2">Дата заїзду: {{dayIn}}</div>
                     <div class="fs-2">Дата виїзду: {{dayOut}}</div>
                     <div class="fs-2">Кількість гостей: {{people}}</div>
-                    <div class="fs-2">Ціна: {{price}} грн</div>
+                    <div class="fs-2">Ціна: {{price}} грн/ніч</div>
                 </div>
             </div>
 
@@ -29,13 +29,7 @@
         </form>
     </div>
 </div>
-{% else %}
-<div class="container">
-    <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black m-5">
-        <h1 class="p-2 text-center me-3">Спочатку увійдіть</h1>
-        <a href="{% url 'login' %}" class="btn btn-primary text-white">Увійти</a>
-    </div>
-</div>
+
 {% endif %}
 
 
