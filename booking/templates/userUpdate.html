@@ -54,7 +54,7 @@
         </div>
 
         <br/>
-        <button type="submit" class="btn btn-primary text-white">Продовжити</button>
+        <button type="submit" class="btn btn-outline-success fs-4">Продовжити</button>
     </form>
 </div>
 <!--else if its 24hrs before editing-->
@@ -62,7 +62,7 @@
 <div class="d-flex justify-content-center">
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 shadow p-4 mb-5 bg-body rounded text-black m-5 text-center fPersian">
         <h1 class="text-danger">Редагування бронювання доступно лише за 24 години до заселення!</h1>
-        <a href="{% url 'userPanel' %}" class="btn btn-primary mt-5">Повернутися до панелі користувача</a>
+        <a href="{% url 'userPanel' %}" class="btn btn-outline-primary fs-4 mt-5">Повернутися до панелі користувача</a>
     </div>
 </div>
 
@@ -72,9 +72,9 @@
 
 {% else %}
 
-<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
+<div class="shadow p-4 mb-5 bg-body rounded text-black  m-5 ">
     <h1 class="p-2  me-3">Ви не ввійшли!</h1>
-    <a href="{% url 'register' %}" class="btn btn-primary shadow text-center">Увійти</a>
+    <a href="{% url 'register' %}" class="btn btn-outline-primary shadow text-center">Увійти</a>
 </div>
 
 {% endif %}

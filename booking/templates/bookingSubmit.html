@@ -10,7 +10,7 @@
 <div class="container">
     <h1 class="text-center fPersian mt-3">Онлайн бронювання</h1>
 
-    <div class="shadow-sm p-5 mb-5 bg-body bg-body rounded text-black m-5">
+    <div class="shadow p-5 mb-5 bg-body bg-body rounded text-black m-5">
         <form method="post" action="{% url 'bookingSubmit' %}" class="me-2 ms-2" required>
             {% csrf_token %}
             
@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary text-white m-3 fPersian">Надіслати</button>
+            <button type="submit" class="btn btn-outline-success fs-4 m-3 fPersian">Надіслати</button>
 
         </form>
     </div>

@@ -29,7 +29,7 @@
             <p class="list-group mt-2">Капсула: {{ booking.capsule }}</p>
             <p class="list-group mt-2">Ціна: {{ booking.price }} грн/ніч</p>
             <div class="mt-3 mb-2">
-                <a class="btn btn-primary rounded-3 p-2" href="{% url 'userUpdate' booking.id %}">Змінити бронювання</a>
+                <a class="btn btn-outline-primary rounded-3 p-2" href="{% url 'userUpdate' booking.id %}">Змінити бронювання</a>
             </div>
         </div>
         {% endfor %}

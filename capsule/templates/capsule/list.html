@@ -14,17 +14,17 @@
         <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 mt-3 mb-3">
             <h2>{{ c.name }}</h2>
             {% autoescape on %}
-            <p class="fs-3">{{ c.description|linebreaks|truncatewords:50}}</p>
+            <div class="fs-5">{{ c.description|linebreaks|truncatewords:42}}</div>
             {% endautoescape %}
             <div class="d-grid gap-2 d-flex justify-content-end">
                 <div>
-                    <button type="submit" class="btn btn-primary text-white fPersian">
-                        <a class="navbar-brand active cHover" href="{{ c.get_absolute_url }}">Інформація</a>
+                    <button type="submit" class="btn btn-outline-primary fPersian">
+                        <a class="navbar-brand active Hover" href="{{ c.get_absolute_url }}">Детальніше про капсулу</a>
                     </button>
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary text-white fPersian ">
-                        <a class="navbar-brand active cHover" href="{% url 'booking' %}">Онлайн бронювання</a>
+                        <a class="navbar-brand active Hover" href="{% url 'booking' %}">Обрати капсулу</a>
                     </button>
                 </div>   
             </div>

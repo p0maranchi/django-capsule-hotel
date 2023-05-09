@@ -19,12 +19,12 @@
         <div class="col-12 mt-3 mb-3">
             <h2>{{ c.name }}</h2>
             {% autoescape on %}
-            <p class="fs-3">{{ c.description|linebreaks}}</p>
+            <div class="fs-4">{{ c.description|linebreaks}}</div>
             {% endautoescape %}
-            <div class="d-grid gap-2 d-flex justify-content-end">
+            <div class="d-grid gap-2 d-flex justify-content-center">
                 <div>
-                    <button type="submit" class="btn btn-primary text-white fPersian ">
-                        <a class="navbar-brand active cHover" href="{% url 'booking' %}">Онлайн бронювання</a>
+                    <button type="submit" class="btn btn-primary fs-4 text-white fPersian ">
+                        <a class="navbar-brand active cHover" href="{% url 'booking' %}">Обрати капсулу</a>
                     </button>
                 </div>   
             </div>
