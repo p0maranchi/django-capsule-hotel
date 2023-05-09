@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="container mt-3">  
+    {% for c in capsule %}
+    <div class="row mb-5 shadow">
+        <div class="col-12 mt-3 mb-3">
+            <img src='{{c.image.url}}' width=100%>
+        </div>
+
+        <div class="col-12 mt-3 mb-3">
+            <h2>{{ c.name }}</h2>
+            {% autoescape on %}
+            <p class="fs-3">{{ c.description|linebreaks}}</p>
+            {% endautoescape %}
+            <div class="d-grid gap-2 d-flex justify-content-end">
+                <div>
+                    <button type="submit" class="btn btn-primary text-white fPersian ">
+                        <a class="navbar-brand active cHover" href="{% url 'booking' %}">Онлайн бронювання</a>
+                    </button>
+                </div>   
+            </div>
+           
+
+        </div>
+
+       
+    </div>
+    {% endfor %}
+  
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+<title>Зареєструватися</title>
+{% extends 'layout.html' %}
+{% load static %}
+{% block body %}
+
+{% if user.is_authenticated %}
+<h1 class="p-2 text-center mb-5 text-warning">Ви вже ввійшли!</h1>
+
+{% else %}
+
+<div class="shadow pb-3 pt-4 mb-5 bg-body bg-body rounded text-black m-5">
+    <h1 class="text-black text-center">Зареєструватися</h1>
+    <div class="m-5">
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            
+            {% for f in form %}
+            <div class="mb-3">
+                <label class="form-label fs-2">{{f.label}}</label>
+                {{ f }}  
+            </div>
+            {% endfor %}
+
+            <br/>
+            <button type="submit" class="btn btn-primary">Надіслати</button>
+            </br>
+            <label class="form-label fs-3 mt-5">Вже є аккаунт?</label>
+            </br>
+            <a href="{% url 'login' %}" class="btn btn-primary">Увійти</a>
+        </form>
+    </div>   
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,37 @@
+<title>Логін</title>
+{% extends 'layout.html' %}
+{% load static %}
+{% block body %}
+
+{% if user.is_authenticated %}
+<h1 class="p-2 text-center mb-5 text-warning">Ви вже ввійшли</h1>
+
+{% else %}
+
+  
+<div class="shadow pb-3 pt-4 mb-5 bg-body bg-body rounded text-black m-5 ">
+  <h1 class="text-center">Увійти</h1>
+  <div class="m-5">
+    <form method="POST" action="{% url 'login' %}" class="">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label class="form-label fs-2">Логін</label>
+          <input type="text" width="" class="form-control form-control-lg" name="username" aria-describedby="emailHelp" placeholder="Username...">
+        </div>
+        <div class="mb-3">
+          <label class="form-label fs-2">Пароль</label>
+          <input type="password" class="form-control form-control-lg" placeholder="Password..." name="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Увійти</button></br>
+
+        <label class="form-label fs-3 mt-5">Ще не має аккаунт?</label></br>
+
+        <a href="{% url 'register' %}" class="btn btn-primary">Зареєструватися</a>
+    </form>
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}
