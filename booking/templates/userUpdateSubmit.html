@@ -4,12 +4,10 @@
 {% block body %}
 
 
-
-
 {% if user.is_authenticated %}
 
 <div class="container">
-    <h1 class="text-center fPersian mt-3">Редагування бронювань</h1>
+    <h1 class="text-center fPersian mt-3">Підтвердіть зміну</h1>
     <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black m-5">
         <form method="post" action="{% url 'userUpdateSubmit' id %}" class="me-2 ms-2" required>
             {% csrf_token %}
@@ -31,6 +29,5 @@
 </div>
 
 {% endif %}
-
 
 {% endblock %}

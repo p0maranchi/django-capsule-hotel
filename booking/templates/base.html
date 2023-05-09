@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar bg-light navbar-expand-lg shadow-sm">
             <div class="container-fluid">
-                <a class="navbar-brand active cHover fs-2 ms-4" href="{% url 'index' %}">
+                <a class="navbar-brand text-black fs-2 ms-4" href="{% url 'index' %}">
                     Capsule Hotel
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,17 +27,17 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0 fs-5 ">
                         <li class="nav-item">
-                            <a class="nav-link active Hover" aria-current="page" href="{% url 'index' %}">Головна</a>
+                            <a class="nav-link text-black" aria-current="page" href="{% url 'index' %}">Головна</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active Hover" href="{% url 'capsule_list' %}">Капсули</a>
+                            <a class="nav-link text-black" href="{% url 'capsule_list' %}">Капсули</a>
                         </li>     
                                           
                         {% if user.is_authenticated %}
                         <!--Clinic Staff Link-->
                         <li class="nav-item dropdown me-3 fs-5">
                             <div class="btn-group" role="group">
-                                <a class="nav-link active dropdown-toggle Hover" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Користувач
                                 </a>
                                 <ul class="dropdown-menu border">
@@ -50,16 +50,16 @@
                         </li>
                         {% else %}
                         <li class="nav-item ">
-                            <a class="nav-link active Hover" href="{% url 'login' %}">Увійти</a>
+                            <a class="nav-link text-black" href="{% url 'login' %}">Увійти</a>
                         </li>
                         <li class="nav-item me-3">
-                            <a class="nav-link active Hover" href="{% url 'register' %}">Зареєструватися</a>
+                            <a class="nav-link text-black " href="{% url 'register' %}">Зареєструватися</a>
                         </li>
                         
                         
                         {% endif %}
                         <li class="nav-item me-4">
-                            <a class="nav-link active Hover btn btn-primary text-white" href="{% url 'booking' %}">Онлайн бронювання</a>
+                            <a class="nav-link btn btn-primary text-white" href="{% url 'booking' %}">Онлайн бронювання</a>
                         </li> 
                     </ul>
                 </div>
@@ -72,7 +72,7 @@
             {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissible fade show text-center" role="alert">
                     <h3 class="display-3">{{ message }}</h3>
-                    <button type="button" class="btn-close fs-1 position-absolute top-50 start-0 translate-middle-y" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close fs-2 position-absolute top-50 start-0 translate-middle-y" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             {% endfor %}
         {% endif %}

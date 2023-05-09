@@ -4,17 +4,14 @@
 {% block body %}
 
 
-
-
 {% if user.is_authenticated %}
 <div class="container">
     <h1 class="text-center  mt-3">Онлайн бронювання</h1>
 
-    <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
+    <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black m-5 ">
         <form method="post" action="{% url 'booking' %}" class="me-2 ms-2" required>
             {% csrf_token %}
 
-            <!--input service-->
             <div>
                 <h3 class="">Оберіть капсулу:</h3>
                 <select class="form-select fs-3" name="capsule">
@@ -23,7 +20,7 @@
                     {% endfor %}
                 </select>
             </div>
-                <!--input day-->
+                
             <div class="mt-3">
                 <h3 class="">Виберіть дату заїзду:</h3>
                 <select class="form-select fs-3" name="dayIn">
@@ -61,11 +58,11 @@
 {% else %}
 <div id="conteiner">
     <h1 class="p-2 text-center mt-3">Ви не ввійшли!</h1>
-    <div class="shadow p-4 bg-body bg-body rounded text-black m-5 ">
+    <div class="shadow p-4 bg-body rounded text-black m-5 ">
         <h1 class="p-2  me-3">Вже є аккаунт?</h1>
         <a href="{% url 'login' %}" class="btn btn-outline-primary ms-2 fs-4 shadow-sm text-center">Увійти</a>
     </div>
-    <div class="shadow p-4 bg-body bg-body rounded text-black m-5 ">
+    <div class="shadow p-4 bg-body rounded text-black m-5 ">
         <h1 class="p-2  me-3">Ще не має?</h1>
         <a href="{% url 'register' %}" class="btn btn-outline-primary ms-2 fs-4 shadow-sm text-center">Зареєструватися</a>
     </div>

@@ -12,10 +12,8 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            # Redirect to a success page.
             return redirect('index')
         else:
-                # Return an 'invalid login' error message.
             ...
             messages.error(request, "Неправильний логін або пароль")
             return redirect('login')

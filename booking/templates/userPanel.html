@@ -4,12 +4,10 @@
 {% block body %}
 
 
-
-
 {% if user.is_authenticated %}
 <h1 class=" ms-5 mt-5 ">Панель користувача</h1>
 
-<div class="shadow p-4 mb-5 bg-body bg-body rounded text-black  m-5 ">
+<div class="shadow p-4 mb-5 bg-body rounded text-black m-5 ">
     <h2 class="">Інформація про користувача:</h2>
     <ul class="list-group fs-4 mt-3">
             <li class="list-group mt-2">Ім'я користувача: {{ user.username }}</li>
@@ -17,13 +15,13 @@
     </ul>
 </div>
 
-<!--Appointment Loop-->
 {% if bookings.count > 0 %}
-<div class="mt-5 ">
+<div class="mt-5">
+
     <h1 class=" ms-5">Ваші бронювання:</h1>
-    <div class="shadow p-4 mb-3 bg-body bg-body rounded text-black m-5">
+    <div class="shadow p-4 mb-3 bg-body rounded text-black m-5">
         {% for booking in bookings %}
-        <div class="list-group fs-4 border p-3 mb-3">
+        <div class="list-group fs-4 p-3 mb-3">
             <p class="list-group mt-2">День заселення: {{ booking.dayIn }}</p>
             <p class="list-group mt-2">День виїзду: {{ booking.dayOut }}</p>
             <p class="list-group mt-2">Капсула: {{ booking.capsule }}</p>
@@ -33,8 +31,7 @@
             </div>
         </div>
         {% endfor %}
-        
-        
+              
     </div>
 </div>
 {% endif %}
