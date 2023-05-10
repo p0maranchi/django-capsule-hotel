@@ -147,8 +147,8 @@ def userUpdateSubmit(request, id):
 
 def dayMake(days,t = 0):
     today = datetime.now()
-    days = []
+    day = []
     for i in range (t, days):
         x = today + timedelta(days=i)
-        days.append(x.strftime('%Y-%m-%d'))
-    return days
+        day.append(x.strftime('%Y-%m-%d'))
+    return day
