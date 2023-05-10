@@ -21,7 +21,7 @@
     <h1 class=" ms-5">Ваші бронювання:</h1>
     <div class="shadow p-4 mb-3 bg-body rounded text-black m-5">
         {% for booking in bookings %}
-        <div class="list-group fs-4 p-3 mb-3">
+        <div class="list-group border fs-4 p-3 mb-3">
             <p class="list-group mt-2">День заселення: {{ booking.dayIn }}</p>
             <p class="list-group mt-2">День виїзду: {{ booking.dayOut }}</p>
             <p class="list-group mt-2">Капсула: {{ booking.capsule }}</p>
