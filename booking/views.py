@@ -49,7 +49,7 @@ def bookingSubmit(request):
     price = int(names.price) * int(people) 
 
     if request.method == 'POST':
-        booking = Booking.objects.get_or_create(
+        Booking.objects.get_or_create(
             user = user,
             capsule = capsule,
             dayIn = dayIn,
@@ -125,7 +125,7 @@ def userUpdateSubmit(request, id):
     price = 250 * int(people)
     
     if request.method == 'POST':
-        booking = Booking.objects.update(
+        Booking.objects.update(
             user = user,
             capsule = capsule,
             dayIn = dayIn,
