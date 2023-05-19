@@ -6,7 +6,6 @@ from .forms import RegisterUserForm
 from django.contrib.messages.views import SuccessMessageMixin 
 from django.contrib.auth.views import PasswordChangeView 
 from django.urls import reverse_lazy 
- 
 from .forms import UserPasswordChangeForm 
 
 def login_user(request):
@@ -53,28 +52,6 @@ def register_user(request):
     return render(request, 'authenticate/register.html', {
         'form':form,
     })
-
-#def UserPasswordChangeView(request):
-    if request.method == "POST":
-        form = UserPasswordChangeForm(request.POST)
-        password1 = request.POST.get('new_password1')
-        password2 = request.POST.get('new_password2')
-        if password1 != password2:
-            messages.error(request, "Паролі не співпадають!")
-        if form.is_valid():
-            form.save()
-            username = request.user 
-            password = form.cleaned_data['password1']
-            user = authenticate(username=username, password = password)
-            login(request, user)
-            messages.success(request, "Пароль змінено!")
-            return redirect('userPanel')
-    else:
-        form = UserPasswordChangeForm()
-    return render(request, 'authenticate/user_password_change.html', {
-        'form':form,
-    })
-
 
 class UserPasswordChangeView(SuccessMessageMixin, PasswordChangeView): 
   
