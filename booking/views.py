@@ -79,10 +79,12 @@ def userPanel(request):
 
 def userUpdate(request, id):
     booking = Booking.objects.get(pk=id)
-    userdatepicked = booking.dayIn
+    userdatepickedIn = booking.dayIn
+    userdatepickedOut = booking.dayOut
+    usercapsulepicked = booking.capsule
     today = datetime.today()
     
-    delta24 = (userdatepicked).strftime('%Y-%m-%d') >= (today + timedelta(days=1)).strftime('%Y-%m-%d')
+    delta24 = (userdatepickedIn).strftime('%Y-%m-%d') >= (today + timedelta(days=1)).strftime('%Y-%m-%d')
    
     dayA1 = dayMake(22, t=1)
     dayA2 = dayMake(22, t=2)
@@ -93,9 +95,9 @@ def userUpdate(request, id):
         dayOut = request.POST.get('dayOut')
         people = request.POST.get('people')
         if dayIn > dayOut:
-            messages.error(request, "Wrong date!")
-            return redirect('booking')
-
+            messages.error(request, "Не правильна дата!")
+            return redirect('userUpdate', id)
+    
         request.session['dayIn'] = dayIn
         request.session['dayOut'] = dayOut
         request.session['capsule'] = capsule
@@ -125,7 +127,7 @@ def userUpdateSubmit(request, id):
     price = 250 * int(people)
     
     if request.method == 'POST':
-        Booking.objects.update(
+        Booking.objects.filter(pk=id).update(
             user = user,
             capsule = capsule,
             dayIn = dayIn,

@@ -22,4 +22,4 @@ class Capsule(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse("capsule_detail", kwargs={"slug": self.slug})
+        return reverse("capsuleDetail", kwargs={"slug": self.slug})

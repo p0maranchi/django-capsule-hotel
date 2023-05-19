@@ -8,7 +8,7 @@ from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy 
 from .forms import UserPasswordChangeForm 
 
-def login_user(request):
+def loginUser(request):
     if request.method == "POST":
        
         username = request.POST['username']
@@ -24,15 +24,15 @@ def login_user(request):
         
     else:
         return render(request, 'authenticate/login.html', {
-    
+
         })
 
-def logout_user(request):
+def logoutUser(request):
     logout(request)
     messages.success(request, "Ви вийшли")
     return redirect('index')
 
-def register_user(request):
+def registerUser(request):
     if request.method == "POST":
         form = RegisterUserForm(request.POST)
         password1 = request.POST.get('password1')
@@ -53,7 +53,7 @@ def register_user(request):
         'form':form,
     })
 
-class UserPasswordChangeView(SuccessMessageMixin, PasswordChangeView): 
+class UserPasswordChange(SuccessMessageMixin, PasswordChangeView): 
   
     form_class = UserPasswordChangeForm 
     template_name = 'authenticate/user_password_change.html' 
